@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/criar',[ProdutoController::class,'create'])->name('produto.create');
+Route::post('/criar',[ProdutoController::class,'store'])->name('produto.create');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
