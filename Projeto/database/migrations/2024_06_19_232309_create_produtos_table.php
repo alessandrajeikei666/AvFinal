@@ -16,8 +16,7 @@ class CreateProdutosTable extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->date('Data de Validade');
-            $table->string('Categoria');
+            $table->date('Data_de_Validade');
             $table->timestamps();
         });
     }

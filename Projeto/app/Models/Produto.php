@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Produto extends Model
 {
-    protected $fillable=['nome','Data de Validade','Categoria'];
+    protected $fillable=['nome','Data_de_Validade'];
 }

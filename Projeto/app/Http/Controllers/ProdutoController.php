@@ -14,7 +14,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+       return view ();
     }
 
     /**
@@ -38,7 +38,8 @@ class ProdutoController extends Controller
     {
         //dd($request);
 
-        $request->all()
+        dd($request->nome);
+        //produto::create(['nome'->$request->nome,'Data de Validade'->$request->DatadeValidade]);
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProdutoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,16 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/criar',[ProdutoController::class,'create'])->name('produto.create');
-Route::post('/criar',[ProdutoController::class,'store'])->name('produto.create');
+
+Route::get('/criar',[ProdutoController::class,'create']);
+Route::post('/criar',[ProdutoController::class,'store'])->name('produto_criar');
 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
+
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
