@@ -6,7 +6,7 @@ AvFinal
 3 - clonar do github
 4 - instalar o composer.phar comando em https://getcomposer.org/download/
 php composer.phar install
-php artisan serv e
+php artisan serve
 
 Vamos usar a tabela produto como exemplo
 Criar BD

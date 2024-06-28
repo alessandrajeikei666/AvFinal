@@ -39,7 +39,8 @@ class ProdutoController extends Controller
         //dd($request);
 
         dd($request->nome);
-        //produto::create(['nome'->$request->nome,'Data de Validade'->$request->DatadeValidade]);
+        produto::create(['nome'->$request->nome,'Data_de_Validade'->$request->Data_de_Validade]);
+        return "Sucesso";
     }
 
     /**
@@ -50,7 +51,9 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {
-        //
+        $produto= Produto::findOrFail($id);
+
+        return view('layouts.show', [produto =>$produto]);
     }
 
     /**
@@ -61,9 +64,12 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
-    }
+       
+        edit ($id);
+        
+        $produto= Produto::findOrFail($id);
 
+        return view('layouts.editar',['produto'=>$produto]);
     /**
      * Update the specified resource in storage.
      *
@@ -71,9 +77,16 @@ class ProdutoController extends Controller
      * @param  \App\Models\Produto  $produto
      * @return \Illuminate\Http\Response
      */
+    
     public function update(Request $request, Produto $produto)
     {
-        //
+     update ($request, $id)
+
+     $produto= Produto::findOrFail($id);
+
+     Produto::update([ 'nome'-> $request->nome, ...]);
+
+     return "Produto atualizado";
     }
 
     /**
@@ -84,6 +97,8 @@ class ProdutoController extends Controller
      */
     public function destroy(Produto $produto)
     {
-        //
+        delete($id) $produto= Produto::findOrFail($id);
+
+        return view('layouts.deletar',['produto'=>$produto]);
     }
 }
