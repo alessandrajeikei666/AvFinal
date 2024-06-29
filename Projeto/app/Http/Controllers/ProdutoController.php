@@ -77,14 +77,15 @@ class ProdutoController extends Controller
      * @param  \App\Models\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    
+    }
+
     public function update(Request $request, Produto $produto)
     {
-     update ($request, $id)
+     update ($request, $id);
 
      $produto= Produto::findOrFail($id);
 
-     Produto::update([ 'nome'-> $request->nome, ...]);
+     Produto::update([ 'nome'-> $request->nome,'Data_de_Validade'->$request->Data_de_Validade]);
 
      return "Produto atualizado";
     }
@@ -97,7 +98,9 @@ class ProdutoController extends Controller
      */
     public function destroy(Produto $produto)
     {
-        delete($id) $produto= Produto::findOrFail($id);
+        delete($id); 
+        
+        $produto= Produto::findOrFail($id);
 
         return view('layouts.deletar',['produto'=>$produto]);
     }
